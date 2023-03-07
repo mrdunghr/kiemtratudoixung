@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra từ đối xứng</title>
+</head>
+<body>
+</body>
+<script>
+
+  console.log(isPalindrome("hrcecrh")); // true
+  console.log(isPalindrome("lloll")); // true
+  console.log(isPalindrome("pleee")); // false
+  console.log(isPalindrome("thanks")); // false
+  function isPalindrome(str) {
+    if (str.length <= 1) { //str không có chuỗi nào auto đối xứng
+      return true;
+    }
+    if (str[0] !== str[str.length - 1]) { // kí tự đầu và cuối trong chuỗi không giồn nhau thì không đối xứng ngược lại là true
+      return false;
+    }
+    //substring(1, 2) = lấy một phần của chuỗi gồm 2 tham số, 1 thứ tự đầu 2 thứ tự kết thúc
+    return isPalindrome(str.substring(1, str.length - 1));// So sánh chuỗi con nằm giữa ký tự đầu tiên và cuối cùng của chuỗi gốc
+  }
+</script>
+</html>
